@@ -1,0 +1,90 @@
+digraph ChatbotFlow {
+    // Configurações Globais
+    rankdir=TB;
+    fontname="Arial";
+    fontsize=12;
+    node [shape=box, style=rounded, fontname="Arial", fontsize=10];
+    edge [fontname="Arial", fontsize=9];
+
+    // Nós de Início e Fim
+    Inicio [shape=circle, style=filled, fillcolor=lightblue, label="Início"];
+    Fim [shape=doublecircle, style=filled, fillcolor=lightblue, label="Fim"];
+
+    // Escolha Aleatória do Fluxo
+    Escolha_Fluxo [label="Escolha do Fluxo", shape=diamond, style=filled, fillcolor=lightgrey];
+    Inicio -> Escolha_Fluxo;
+
+    // Subgraph para o Fluxo Inteligente
+    subgraph cluster_Inteligente {
+        label = "Fluxo Inteligente (Gemini)";
+        bgcolor="#EFEFFF";
+        
+        Gemini_Process [label="Processando com IA"];
+        Gemini_Process -> Gemini_Process [label=" Nova Mensagem "];
+    }
+    
+    // Subgraph para o Fluxo Tradicional (Menus)
+    subgraph cluster_Tradicional {
+        label = "Fluxo Tradicional (Menus)";
+        bgcolor="#FFFFEF";
+
+        Menu [label="Menu Principal"];
+        Fazer_Pedido [label="Fazer Pedido"];
+        Capturar_Quantidade [label="Capturar Quantidade"];
+        Adicionar_Itens [label="Adicionar Mais Itens?"];
+        Capturar_Nome [label="Capturar Nome"];
+        
+        Modificar_Pedido [label="Modificar Pedido"];
+        Alterar_Qtd_Item [label="Alterar Quantidade (Item)"];
+        Alterar_Qtd_Valor [label="Alterar Quantidade (Valor)"];
+        Excluir_Item [label="Excluir Item"];
+
+        // Conexões do fluxo principal de pedido
+        Menu -> Fazer_Pedido [label=" 1. Ver Cardápio\n 2. Fazer Pedido "];
+        Fazer_Pedido -> Capturar_Quantidade [label=" Seleciona item válido "];
+        Fazer_Pedido -> Menu [label=" 9. Voltar "];
+        Capturar_Quantidade -> Adicionar_Itens [label=" Informa quantidade "];
+        Adicionar_Itens -> Fazer_Pedido [label=" Sim "];
+        Adicionar_Itens -> Capturar_Nome [label=" Não "];
+        Capturar_Nome -> Menu [label=" Informa nome\n(Pedido Finalizado) "];
+
+        // Conexões do fluxo de modificação de pedido
+        Menu -> Modificar_Pedido [label=" 3. Ver Pedido "];
+        Modificar_Pedido -> Alterar_Qtd_Item [label=" 1. Alterar Quantidade "];
+        Modificar_Pedido -> Excluir_Item [label=" 2. Excluir Item "];
+        Modificar_Pedido -> Menu [label=" 3. Cancelar Pedido\n 4. Voltar "];
+        Alterar_Qtd_Item -> Alterar_Qtd_Valor [label=" Seleciona Item "];
+        Alterar_Qtd_Valor -> Modificar_Pedido [label=" Informa nova quantidade "];
+        Excluir_Item -> Modificar_Pedido [label=" Exclui item\n(pedido > 0) "];
+        Excluir_Item -> Menu [label=" Exclui último item\n(pedido = 0) "];
+    }
+
+    // Subgraph para o Fluxo de Avaliação
+    subgraph cluster_Avaliacao {
+        label = "Fluxo de Avaliação (Questionário)";
+        bgcolor="#EFFFEF";
+
+        Iniciar_Avaliacao [label="Deseja Avaliar?", shape=diamond, style=filled, fillcolor=lightgrey];
+        Q1 [label="P1: Satisfação"];
+        Q2 [label="P2: Objetivo"];
+        Q3 [label="P3: Preferência"];
+        Q4 [label="P4: Feedback"];
+
+        Iniciar_Avaliacao -> Q1 [label=" Sim "];
+        Q1 -> Q2 [label=" Responde P1 "];
+        Q2 -> Q3 [label=" Responde P2 "];
+        Q3 -> Q4 [label=" Responde P3 "];
+    }
+    
+    // Conexões entre os fluxos
+    Escolha_Fluxo -> Gemini_Process [label=" Aleatório (IA) "];
+    Escolha_Fluxo -> Menu [label=" Aleatório (Menu) "];
+
+    // Conexões para o fluxo de avaliação (Comando "sair")
+    Gemini_Process -> Iniciar_Avaliacao [label=" \"sair\" "];
+    Menu -> Iniciar_Avaliacao [label=" 4. Cancelar Atendimento\n ou \"sair\" "];
+
+    // Conexões para o Fim
+    Iniciar_Avaliacao -> Fim [label=" Não "];
+    Q4 -> Fim [label=" Responde P4\n(Salva Respostas) "];
+}

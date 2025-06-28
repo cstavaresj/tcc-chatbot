@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Logs</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/logs.css">
+    <link rel="stylesheet" href="style/responsive.css">
+    <script defer src="js/theme-loader.js"></script>
+</head>
+<body>
+    
+<div class="main-container">
+    <div class="log-list-container">
+    <div class="view-selector">
+        <button class="view-button active" data-view="conversas">Conversas</button>
+        <button class="view-button" data-view="questionarios">Questionários</button>
+    </div>
+
+    <div class="search-container">
+        <input type="search" id="search-box" placeholder="Pesquisar por nome ou conteúdo...">
+    </div>
+    
+    <h2 id="list-title">Conversas Salvas</h2>
+    <select id="log-selector" size="15"> <option>Carregando...</option>
+    </select>
+</div>
+
+    <div class="chat-container" id="chat-viewer">
+    
+        <div class="chat-header">
+            <div class="profile">
+                <h2 id="viewer-title">Visualizador de Conversa</h2>
+            </div>
+            <div class="settings-container">
+                <span id="settings-btn">&#8942;</span>
+                <div id="settings-menu" class="settings-menu hidden">
+                    <div id="light-mode-btn">Tema Claro</div>
+                    <div id="dark-mode-btn">Tema Escuro</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-summary-info" id="chat-summary-info">
+            <p><strong>Tipo de Atendimento:</strong> <span id="atendimento-tipo">N/D</span></p>
+            <p><strong>Tempo de Interação:</strong> <span id="atendimento-tempo">N/D</span></p>
+        </div>
+        
+        <div class="chat-messages" id="chat-messages">
+            <div class="message received"><p>Selecione um tipo de log e um arquivo na lista para visualizar.</p></div>
+        </div>
+
+    </div>
+</div>
+
+    <footer>
+        <a href="index.html">Voltar para o Chat</a>
+    </footer>
+
+    <script src="js/logs.js"></script>
+</body>
+</html>

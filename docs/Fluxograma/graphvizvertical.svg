@@ -1,0 +1,325 @@
+<svg width="928pt" height="796pt" viewBox="0.00 0.00 928.00 796.41" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 792.41)">
+<title>ChatbotFlow</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-792.41 924,-792.41 924,4 -4,4"/>
+<g id="clust1" class="cluster">
+<title>cluster_Inteligente</title>
+<polygon fill="#efefff" stroke="black" points="697,-552.88 697,-627.28 912,-627.28 912,-552.88 697,-552.88"/>
+<text text-anchor="middle" x="804.5" y="-612.48" font-family="Arial" font-size="12.00">Fluxo Inteligente (Gemini)</text>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_Tradicional</title>
+<polygon fill="#ffffef" stroke="black" points="8,-179.68 8,-627.28 680,-627.28 680,-179.68 8,-179.68"/>
+<text text-anchor="middle" x="344" y="-612.48" font-family="Arial" font-size="12.00">Fluxo Tradicional (Menus)</text>
+</g>
+<g id="clust3" class="cluster">
+<title>cluster_Avaliacao</title>
+<polygon fill="#efffef" stroke="black" points="688,-96.88 688,-513.28 885,-513.28 885,-96.88 688,-96.88"/>
+<text text-anchor="middle" x="786.5" y="-498.48" font-family="Arial" font-size="12.00">Fluxo de Avaliação (Questionário)</text>
+</g>
+<!-- Inicio -->
+<g id="node1" class="node">
+<title>Inicio</title>
+<ellipse fill="lightblue" stroke="black" cx="617" cy="-762.74" rx="25.66" ry="25.66"/>
+<text text-anchor="middle" x="617" y="-759.74" font-family="Arial" font-size="10.00">Início</text>
+</g>
+<!-- Escolha_Fluxo -->
+<g id="node3" class="node">
+<title>Escolha_Fluxo</title>
+<polygon fill="lightgrey" stroke="black" points="617,-700.08 538.16,-682.08 617,-664.08 695.84,-682.08 617,-700.08"/>
+<text text-anchor="middle" x="617" y="-679.08" font-family="Arial" font-size="10.00">Escolha do Fluxo</text>
+</g>
+<!-- Inicio&#45;&gt;Escolha_Fluxo -->
+<g id="edge1" class="edge">
+<title>Inicio-&gt;Escolha_Fluxo</title>
+<path fill="none" stroke="black" d="M617,-736.85C617,-728.87 617,-719.96 617,-711.73"/>
+<polygon fill="black" stroke="black" points="620.5,-711.86 617,-701.86 613.5,-711.86 620.5,-711.86"/>
+</g>
+<!-- Fim -->
+<g id="node2" class="node">
+<title>Fim</title>
+<ellipse fill="lightblue" stroke="black" cx="780" cy="-23.64" rx="19.64" ry="19.64"/>
+<ellipse fill="none" stroke="black" cx="780" cy="-23.64" rx="23.64" ry="23.64"/>
+<text text-anchor="middle" x="780" y="-20.64" font-family="Arial" font-size="10.00">Fim</text>
+</g>
+<!-- Gemini_Process -->
+<g id="node4" class="node">
+<title>Gemini_Process</title>
+<path fill="none" stroke="black" d="M801.13,-596.88C801.13,-596.88 716.87,-596.88 716.87,-596.88 710.87,-596.88 704.87,-590.88 704.87,-584.88 704.87,-584.88 704.87,-572.88 704.87,-572.88 704.87,-566.88 710.87,-560.88 716.87,-560.88 716.87,-560.88 801.13,-560.88 801.13,-560.88 807.13,-560.88 813.13,-566.88 813.13,-572.88 813.13,-572.88 813.13,-584.88 813.13,-584.88 813.13,-590.88 807.13,-596.88 801.13,-596.88"/>
+<text text-anchor="middle" x="759" y="-575.88" font-family="Arial" font-size="10.00">Processando com IA</text>
+</g>
+<!-- Escolha_Fluxo&#45;&gt;Gemini_Process -->
+<g id="edge22" class="edge">
+<title>Escolha_Fluxo-&gt;Gemini_Process</title>
+<path fill="none" stroke="black" d="M635.56,-667.85C658.39,-651.58 697.56,-623.66 725.66,-603.64"/>
+<polygon fill="black" stroke="black" points="727.38,-606.71 733.49,-598.06 723.32,-601.01 727.38,-606.71"/>
+<text text-anchor="middle" x="708.26" y="-637.98" font-family="Arial" font-size="9.00"> Aleatório (IA) </text>
+</g>
+<!-- Menu -->
+<g id="node5" class="node">
+<title>Menu</title>
+<path fill="none" stroke="black" d="M475.07,-596.88C475.07,-596.88 416.93,-596.88 416.93,-596.88 410.93,-596.88 404.93,-590.88 404.93,-584.88 404.93,-584.88 404.93,-572.88 404.93,-572.88 404.93,-566.88 410.93,-560.88 416.93,-560.88 416.93,-560.88 475.07,-560.88 475.07,-560.88 481.07,-560.88 487.07,-566.88 487.07,-572.88 487.07,-572.88 487.07,-584.88 487.07,-584.88 487.07,-590.88 481.07,-596.88 475.07,-596.88"/>
+<text text-anchor="middle" x="446" y="-575.88" font-family="Arial" font-size="10.00">Menu Principal</text>
+</g>
+<!-- Escolha_Fluxo&#45;&gt;Menu -->
+<g id="edge23" class="edge">
+<title>Escolha_Fluxo-&gt;Menu</title>
+<path fill="none" stroke="black" d="M595.69,-668.47C568.06,-652.12 519.37,-623.3 485.04,-602.98"/>
+<polygon fill="black" stroke="black" points="487.02,-600.09 476.63,-598.01 483.45,-606.11 487.02,-600.09"/>
+<text text-anchor="middle" x="592.57" y="-637.98" font-family="Arial" font-size="9.00"> Aleatório (Menu) </text>
+</g>
+<!-- Gemini_Process&#45;&gt;Gemini_Process -->
+<g id="edge2" class="edge">
+<title>Gemini_Process-&gt;Gemini_Process</title>
+<path fill="none" stroke="black" d="M813.42,-587.23C823.8,-586.23 831.13,-583.45 831.13,-578.88 831.13,-576.24 828.68,-574.19 824.61,-572.74"/>
+<polygon fill="black" stroke="black" points="825.39,-569.33 814.9,-570.82 824.03,-576.2 825.39,-569.33"/>
+<text text-anchor="middle" x="867.65" y="-576.18" font-family="Arial" font-size="9.00"> Nova Mensagem </text>
+</g>
+<!-- Iniciar_Avaliacao -->
+<g id="node14" class="node">
+<title>Iniciar_Avaliacao</title>
+<polygon fill="lightgrey" stroke="black" points="769,-482.88 695.83,-464.88 769,-446.88 842.17,-464.88 769,-482.88"/>
+<text text-anchor="middle" x="769" y="-461.88" font-family="Arial" font-size="10.00">Deseja Avaliar?</text>
+</g>
+<!-- Gemini_Process&#45;&gt;Iniciar_Avaliacao -->
+<g id="edge24" class="edge">
+<title>Gemini_Process-&gt;Iniciar_Avaliacao</title>
+<path fill="none" stroke="black" d="M760.56,-560.38C762.14,-542.69 764.61,-515.06 766.47,-494.24"/>
+<polygon fill="black" stroke="black" points="769.94,-494.67 767.35,-484.4 762.97,-494.05 769.94,-494.67"/>
+<text text-anchor="middle" x="776.95" y="-529.38" font-family="Arial" font-size="9.00"> "sair" </text>
+</g>
+<!-- Fazer_Pedido -->
+<g id="node6" class="node">
+<title>Fazer_Pedido</title>
+<path fill="none" stroke="black" d="M161.74,-482.88C161.74,-482.88 110.26,-482.88 110.26,-482.88 104.26,-482.88 98.26,-476.88 98.26,-470.88 98.26,-470.88 98.26,-458.88 98.26,-458.88 98.26,-452.88 104.26,-446.88 110.26,-446.88 110.26,-446.88 161.74,-446.88 161.74,-446.88 167.74,-446.88 173.74,-452.88 173.74,-458.88 173.74,-458.88 173.74,-470.88 173.74,-470.88 173.74,-476.88 167.74,-482.88 161.74,-482.88"/>
+<text text-anchor="middle" x="136" y="-461.88" font-family="Arial" font-size="10.00">Fazer Pedido</text>
+</g>
+<!-- Menu&#45;&gt;Fazer_Pedido -->
+<g id="edge3" class="edge">
+<title>Menu-&gt;Fazer_Pedido</title>
+<path fill="none" stroke="black" d="M404.53,-578.72C332.24,-579.27 187.41,-576.06 151.46,-542.88 138.4,-530.82 134.63,-511.08 134.08,-494.6"/>
+<polygon fill="black" stroke="black" points="137.58,-494.88 134.15,-484.85 130.58,-494.83 137.58,-494.88"/>
+<text text-anchor="middle" x="185.73" y="-534.78" font-family="Arial" font-size="9.00"> 1. Ver Cardápio</text>
+<text text-anchor="middle" x="185.73" y="-523.98" font-family="Arial" font-size="9.00"> 2. Fazer Pedido </text>
+</g>
+<!-- Modificar_Pedido -->
+<g id="node10" class="node">
+<title>Modificar_Pedido</title>
+<path fill="none" stroke="black" d="M378.24,-482.88C378.24,-482.88 311.76,-482.88 311.76,-482.88 305.76,-482.88 299.76,-476.88 299.76,-470.88 299.76,-470.88 299.76,-458.88 299.76,-458.88 299.76,-452.88 305.76,-446.88 311.76,-446.88 311.76,-446.88 378.24,-446.88 378.24,-446.88 384.24,-446.88 390.24,-452.88 390.24,-458.88 390.24,-458.88 390.24,-470.88 390.24,-470.88 390.24,-476.88 384.24,-482.88 378.24,-482.88"/>
+<text text-anchor="middle" x="345" y="-461.88" font-family="Arial" font-size="10.00">Modificar Pedido</text>
+</g>
+<!-- Menu&#45;&gt;Modificar_Pedido -->
+<g id="edge10" class="edge">
+<title>Menu-&gt;Modificar_Pedido</title>
+<path fill="none" stroke="black" d="M404.48,-576.62C379.57,-573.45 349.66,-564.88 333.46,-542.88 323.11,-528.82 326.14,-509.34 331.69,-493.49"/>
+<polygon fill="black" stroke="black" points="334.78,-495.2 335.24,-484.62 328.28,-492.6 334.78,-495.2"/>
+<text text-anchor="middle" x="363.23" y="-529.38" font-family="Arial" font-size="9.00"> 3. Ver Pedido </text>
+</g>
+<!-- Menu&#45;&gt;Iniciar_Avaliacao -->
+<g id="edge25" class="edge">
+<title>Menu-&gt;Iniciar_Avaliacao</title>
+<path fill="none" stroke="black" d="M487.37,-569.7C517.91,-563.32 560.36,-553.74 597,-542.88 623.95,-534.89 629.72,-530 656.44,-521.28 668.57,-517.32 672.23,-518.19 684,-513.28 703.18,-505.27 723.56,-494.01 739.56,-484.47"/>
+<polygon fill="black" stroke="black" points="741.35,-487.47 748.08,-479.29 737.72,-481.49 741.35,-487.47"/>
+<text text-anchor="middle" x="707.22" y="-534.78" font-family="Arial" font-size="9.00"> 4. Cancelar Atendimento</text>
+<text text-anchor="middle" x="707.22" y="-523.98" font-family="Arial" font-size="9.00"> ou "sair" </text>
+</g>
+<!-- Fazer_Pedido&#45;&gt;Menu -->
+<g id="edge5" class="edge">
+<title>Fazer_Pedido-&gt;Menu</title>
+<path fill="none" stroke="black" d="M164,-483.27C193.11,-500.66 240.5,-527.03 284.48,-542.88 319.98,-555.67 361.62,-564.56 393.74,-570.17"/>
+<polygon fill="black" stroke="black" points="392.73,-573.55 403.18,-571.77 393.9,-566.65 392.73,-573.55"/>
+<text text-anchor="middle" x="303.74" y="-529.38" font-family="Arial" font-size="9.00"> 9. Voltar </text>
+</g>
+<!-- Capturar_Quantidade -->
+<g id="node7" class="node">
+<title>Capturar_Quantidade</title>
+<path fill="none" stroke="black" d="M169.7,-389.28C169.7,-389.28 84.3,-389.28 84.3,-389.28 78.3,-389.28 72.3,-383.28 72.3,-377.28 72.3,-377.28 72.3,-365.28 72.3,-365.28 72.3,-359.28 78.3,-353.28 84.3,-353.28 84.3,-353.28 169.7,-353.28 169.7,-353.28 175.7,-353.28 181.7,-359.28 181.7,-365.28 181.7,-365.28 181.7,-377.28 181.7,-377.28 181.7,-383.28 175.7,-389.28 169.7,-389.28"/>
+<text text-anchor="middle" x="127" y="-368.28" font-family="Arial" font-size="10.00">Capturar Quantidade</text>
+</g>
+<!-- Fazer_Pedido&#45;&gt;Capturar_Quantidade -->
+<g id="edge4" class="edge">
+<title>Fazer_Pedido-&gt;Capturar_Quantidade</title>
+<path fill="none" stroke="black" d="M128.1,-446.42C126,-440.92 124.01,-434.75 122.96,-428.88 121.33,-419.85 121.42,-409.89 122.2,-400.88"/>
+<polygon fill="black" stroke="black" points="125.64,-401.59 123.35,-391.24 118.69,-400.76 125.64,-401.59"/>
+<text text-anchor="middle" x="167.98" y="-415.38" font-family="Arial" font-size="9.00"> Seleciona item válido </text>
+</g>
+<!-- Adicionar_Itens -->
+<g id="node8" class="node">
+<title>Adicionar_Itens</title>
+<path fill="none" stroke="black" d="M170.8,-306.48C170.8,-306.48 83.2,-306.48 83.2,-306.48 77.2,-306.48 71.2,-300.48 71.2,-294.48 71.2,-294.48 71.2,-282.48 71.2,-282.48 71.2,-276.48 77.2,-270.48 83.2,-270.48 83.2,-270.48 170.8,-270.48 170.8,-270.48 176.8,-270.48 182.8,-276.48 182.8,-282.48 182.8,-282.48 182.8,-294.48 182.8,-294.48 182.8,-300.48 176.8,-306.48 170.8,-306.48"/>
+<text text-anchor="middle" x="127" y="-285.48" font-family="Arial" font-size="10.00">Adicionar Mais Itens?</text>
+</g>
+<!-- Capturar_Quantidade&#45;&gt;Adicionar_Itens -->
+<g id="edge6" class="edge">
+<title>Capturar_Quantidade-&gt;Adicionar_Itens</title>
+<path fill="none" stroke="black" d="M127,-353.14C127,-343.04 127,-329.98 127,-318.33"/>
+<polygon fill="black" stroke="black" points="130.5,-318.38 127,-308.38 123.5,-318.38 130.5,-318.38"/>
+<text text-anchor="middle" x="168.28" y="-327.18" font-family="Arial" font-size="9.00"> Informa quantidade </text>
+</g>
+<!-- Adicionar_Itens&#45;&gt;Fazer_Pedido -->
+<g id="edge7" class="edge">
+<title>Adicionar_Itens-&gt;Fazer_Pedido</title>
+<path fill="none" stroke="black" d="M90.44,-306.86C72.48,-317.52 52.58,-333.04 42.5,-353.28 35.37,-367.6 35.56,-374.86 42.5,-389.28 52.86,-410.79 72.77,-428.02 91.56,-440.49"/>
+<polygon fill="black" stroke="black" points="89.62,-443.4 99.95,-445.76 93.35,-437.47 89.62,-443.4"/>
+<text text-anchor="middle" x="52.75" y="-368.58" font-family="Arial" font-size="9.00"> Sim </text>
+</g>
+<!-- Capturar_Nome -->
+<g id="node9" class="node">
+<title>Capturar_Nome</title>
+<path fill="none" stroke="black" d="M505.18,-223.68C505.18,-223.68 444.82,-223.68 444.82,-223.68 438.82,-223.68 432.82,-217.68 432.82,-211.68 432.82,-211.68 432.82,-199.68 432.82,-199.68 432.82,-193.68 438.82,-187.68 444.82,-187.68 444.82,-187.68 505.18,-187.68 505.18,-187.68 511.18,-187.68 517.18,-193.68 517.18,-199.68 517.18,-199.68 517.18,-211.68 517.18,-211.68 517.18,-217.68 511.18,-223.68 505.18,-223.68"/>
+<text text-anchor="middle" x="475" y="-202.68" font-family="Arial" font-size="10.00">Capturar Nome</text>
+</g>
+<!-- Adicionar_Itens&#45;&gt;Capturar_Nome -->
+<g id="edge8" class="edge">
+<title>Adicionar_Itens-&gt;Capturar_Nome</title>
+<path fill="none" stroke="black" d="M183.3,-274.41C248.99,-259.16 356.82,-234.12 421.35,-219.14"/>
+<polygon fill="black" stroke="black" points="422.07,-222.56 431.02,-216.89 420.48,-215.74 422.07,-222.56"/>
+<text text-anchor="middle" x="332.59" y="-244.38" font-family="Arial" font-size="9.00"> Não </text>
+</g>
+<!-- Capturar_Nome&#45;&gt;Menu -->
+<g id="edge9" class="edge">
+<title>Capturar_Nome-&gt;Menu</title>
+<path fill="none" stroke="black" d="M517.57,-217.38C551.02,-228.65 592,-250.08 592,-287.48 592,-465.88 592,-465.88 592,-465.88 592,-487.06 599.36,-496.08 587,-513.28 566.22,-542.2 529.27,-558.48 498.42,-567.46"/>
+<polygon fill="black" stroke="black" points="497.56,-564.07 488.83,-570.05 499.39,-570.82 497.56,-564.07"/>
+<text text-anchor="middle" x="632.02" y="-373.98" font-family="Arial" font-size="9.00"> Informa nome</text>
+<text text-anchor="middle" x="632.02" y="-363.18" font-family="Arial" font-size="9.00">(Pedido Finalizado) </text>
+</g>
+<!-- Modificar_Pedido&#45;&gt;Menu -->
+<g id="edge13" class="edge">
+<title>Modificar_Pedido-&gt;Menu</title>
+<path fill="none" stroke="black" d="M360.67,-483.26C377.23,-501.62 403.53,-530.79 422.56,-551.89"/>
+<polygon fill="black" stroke="black" points="419.91,-554.17 429.21,-559.26 425.11,-549.49 419.91,-554.17"/>
+<text text-anchor="middle" x="452.86" y="-534.78" font-family="Arial" font-size="9.00"> 3. Cancelar Pedido</text>
+<text text-anchor="middle" x="452.86" y="-523.98" font-family="Arial" font-size="9.00"> 4. Voltar </text>
+</g>
+<!-- Alterar_Qtd_Item -->
+<g id="node11" class="node">
+<title>Alterar_Qtd_Item</title>
+<path fill="none" stroke="black" d="M457.41,-389.28C457.41,-389.28 352.59,-389.28 352.59,-389.28 346.59,-389.28 340.59,-383.28 340.59,-377.28 340.59,-377.28 340.59,-365.28 340.59,-365.28 340.59,-359.28 346.59,-353.28 352.59,-353.28 352.59,-353.28 457.41,-353.28 457.41,-353.28 463.41,-353.28 469.41,-359.28 469.41,-365.28 469.41,-365.28 469.41,-377.28 469.41,-377.28 469.41,-383.28 463.41,-389.28 457.41,-389.28"/>
+<text text-anchor="middle" x="405" y="-368.28" font-family="Arial" font-size="10.00">Alterar Quantidade (Item)</text>
+</g>
+<!-- Modificar_Pedido&#45;&gt;Alterar_Qtd_Item -->
+<g id="edge11" class="edge">
+<title>Modificar_Pedido-&gt;Alterar_Qtd_Item</title>
+<path fill="none" stroke="black" d="M299.34,-455.02C264.9,-446.26 226.57,-430.75 245.45,-407.28 245.54,-407.17 287.9,-397.88 328.94,-388.9"/>
+<polygon fill="black" stroke="black" points="329.66,-392.32 338.68,-386.77 328.17,-385.48 329.66,-392.32"/>
+<text text-anchor="middle" x="290.72" y="-415.38" font-family="Arial" font-size="9.00"> 1. Alterar Quantidade </text>
+</g>
+<!-- Excluir_Item -->
+<g id="node13" class="node">
+<title>Excluir_Item</title>
+<path fill="none" stroke="black" d="M544.12,-389.28C544.12,-389.28 499.88,-389.28 499.88,-389.28 493.88,-389.28 487.88,-383.28 487.88,-377.28 487.88,-377.28 487.88,-365.28 487.88,-365.28 487.88,-359.28 493.88,-353.28 499.88,-353.28 499.88,-353.28 544.12,-353.28 544.12,-353.28 550.12,-353.28 556.12,-359.28 556.12,-365.28 556.12,-365.28 556.12,-377.28 556.12,-377.28 556.12,-383.28 550.12,-389.28 544.12,-389.28"/>
+<text text-anchor="middle" x="522" y="-368.28" font-family="Arial" font-size="10.00">Excluir Item</text>
+</g>
+<!-- Modificar_Pedido&#45;&gt;Excluir_Item -->
+<g id="edge12" class="edge">
+<title>Modificar_Pedido-&gt;Excluir_Item</title>
+<path fill="none" stroke="black" d="M344.5,-446.5C345.14,-433.78 348.21,-417.1 358.98,-407.28 396.04,-373.49 422.77,-399.3 476.53,-388.95"/>
+<polygon fill="black" stroke="black" points="477.22,-392.38 486.17,-386.71 475.64,-385.56 477.22,-392.38"/>
+<text text-anchor="middle" x="389.99" y="-415.38" font-family="Arial" font-size="9.00"> 2. Excluir Item </text>
+</g>
+<!-- Alterar_Qtd_Valor -->
+<g id="node12" class="node">
+<title>Alterar_Qtd_Valor</title>
+<path fill="none" stroke="black" d="M356.36,-306.48C356.36,-306.48 247.64,-306.48 247.64,-306.48 241.64,-306.48 235.64,-300.48 235.64,-294.48 235.64,-294.48 235.64,-282.48 235.64,-282.48 235.64,-276.48 241.64,-270.48 247.64,-270.48 247.64,-270.48 356.36,-270.48 356.36,-270.48 362.36,-270.48 368.36,-276.48 368.36,-282.48 368.36,-282.48 368.36,-294.48 368.36,-294.48 368.36,-300.48 362.36,-306.48 356.36,-306.48"/>
+<text text-anchor="middle" x="302" y="-285.48" font-family="Arial" font-size="10.00">Alterar Quantidade (Valor)</text>
+</g>
+<!-- Alterar_Qtd_Item&#45;&gt;Alterar_Qtd_Valor -->
+<g id="edge14" class="edge">
+<title>Alterar_Qtd_Item-&gt;Alterar_Qtd_Valor</title>
+<path fill="none" stroke="black" d="M382.9,-352.95C368.38,-341.55 349.15,-326.47 333.09,-313.87"/>
+<polygon fill="black" stroke="black" points="335.28,-311.14 325.25,-307.72 330.96,-316.64 335.28,-311.14"/>
+<text text-anchor="middle" x="391.93" y="-327.18" font-family="Arial" font-size="9.00"> Seleciona Item </text>
+</g>
+<!-- Alterar_Qtd_Valor&#45;&gt;Modificar_Pedido -->
+<g id="edge15" class="edge">
+<title>Alterar_Qtd_Valor-&gt;Modificar_Pedido</title>
+<path fill="none" stroke="black" d="M271.17,-306.78C254.9,-317.77 236.48,-333.62 227.43,-353.28 213.28,-383.99 213.28,-403.83 236,-428.88 249.51,-443.77 269.36,-452.36 288.43,-457.3"/>
+<polygon fill="black" stroke="black" points="287.51,-460.68 298.04,-459.47 289.05,-453.85 287.51,-460.68"/>
+<text text-anchor="middle" x="279.71" y="-368.58" font-family="Arial" font-size="9.00"> Informa nova quantidade </text>
+</g>
+<!-- Excluir_Item&#45;&gt;Menu -->
+<g id="edge17" class="edge">
+<title>Excluir_Item-&gt;Menu</title>
+<path fill="none" stroke="black" d="M520.04,-389.52C515.29,-430.25 503,-529.94 495,-542.88 492.68,-546.62 489.81,-550.08 486.61,-553.25"/>
+<polygon fill="black" stroke="black" points="484.61,-550.36 479.31,-559.53 489.17,-555.66 484.61,-550.36"/>
+<text text-anchor="middle" x="548.91" y="-467.58" font-family="Arial" font-size="9.00"> Exclui último item</text>
+<text text-anchor="middle" x="548.91" y="-456.78" font-family="Arial" font-size="9.00">(pedido = 0) </text>
+</g>
+<!-- Excluir_Item&#45;&gt;Modificar_Pedido -->
+<g id="edge16" class="edge">
+<title>Excluir_Item-&gt;Modificar_Pedido</title>
+<path fill="none" stroke="black" d="M487.39,-386.55C470.35,-393.83 451.87,-402.2 444.22,-407.28 432.48,-415.07 432.71,-421.03 421,-428.88 414.2,-433.44 406.71,-437.69 399.16,-441.54"/>
+<polygon fill="black" stroke="black" points="397.71,-438.35 390.25,-445.88 400.77,-444.65 397.71,-438.35"/>
+<text text-anchor="middle" x="469.61" y="-420.78" font-family="Arial" font-size="9.00"> Exclui item</text>
+<text text-anchor="middle" x="469.61" y="-409.98" font-family="Arial" font-size="9.00">(pedido &gt; 0) </text>
+</g>
+<!-- Iniciar_Avaliacao&#45;&gt;Fim -->
+<g id="edge26" class="edge">
+<title>Iniciar_Avaliacao-&gt;Fim</title>
+<path fill="none" stroke="black" d="M784.27,-450.3C801.16,-433.71 826,-403.93 826,-372.28 826,-372.28 826,-372.28 826,-121.88 826,-95.97 823.38,-88.56 812,-65.28 809.45,-60.07 806.15,-54.9 802.64,-50.08"/>
+<polygon fill="black" stroke="black" points="805.64,-48.23 796.71,-42.53 800.13,-52.56 805.64,-48.23"/>
+<text text-anchor="middle" x="836.75" y="-244.38" font-family="Arial" font-size="9.00"> Não </text>
+</g>
+<!-- Q1 -->
+<g id="node15" class="node">
+<title>Q1</title>
+<path fill="none" stroke="black" d="M778.52,-389.28C778.52,-389.28 721.48,-389.28 721.48,-389.28 715.48,-389.28 709.48,-383.28 709.48,-377.28 709.48,-377.28 709.48,-365.28 709.48,-365.28 709.48,-359.28 715.48,-353.28 721.48,-353.28 721.48,-353.28 778.52,-353.28 778.52,-353.28 784.52,-353.28 790.52,-359.28 790.52,-365.28 790.52,-365.28 790.52,-377.28 790.52,-377.28 790.52,-383.28 784.52,-389.28 778.52,-389.28"/>
+<text text-anchor="middle" x="750" y="-368.28" font-family="Arial" font-size="10.00">P1: Satisfação</text>
+</g>
+<!-- Iniciar_Avaliacao&#45;&gt;Q1 -->
+<g id="edge18" class="edge">
+<title>Iniciar_Avaliacao-&gt;Q1</title>
+<path fill="none" stroke="black" d="M765.6,-447.5C762.92,-434.55 759.1,-416.14 755.91,-400.78"/>
+<polygon fill="black" stroke="black" points="759.39,-400.32 753.93,-391.24 752.54,-401.75 759.39,-400.32"/>
+<text text-anchor="middle" x="771.45" y="-415.38" font-family="Arial" font-size="9.00"> Sim </text>
+</g>
+<!-- Q2 -->
+<g id="node16" class="node">
+<title>Q2</title>
+<path fill="none" stroke="black" d="M768.24,-306.48C768.24,-306.48 721.76,-306.48 721.76,-306.48 715.76,-306.48 709.76,-300.48 709.76,-294.48 709.76,-294.48 709.76,-282.48 709.76,-282.48 709.76,-276.48 715.76,-270.48 721.76,-270.48 721.76,-270.48 768.24,-270.48 768.24,-270.48 774.24,-270.48 780.24,-276.48 780.24,-282.48 780.24,-282.48 780.24,-294.48 780.24,-294.48 780.24,-300.48 774.24,-306.48 768.24,-306.48"/>
+<text text-anchor="middle" x="745" y="-285.48" font-family="Arial" font-size="10.00">P2: Objetivo</text>
+</g>
+<!-- Q1&#45;&gt;Q2 -->
+<g id="edge19" class="edge">
+<title>Q1-&gt;Q2</title>
+<path fill="none" stroke="black" d="M748.94,-353.14C748.31,-343.04 747.51,-329.98 746.79,-318.33"/>
+<polygon fill="black" stroke="black" points="750.28,-318.14 746.17,-308.38 743.29,-318.58 750.28,-318.14"/>
+<text text-anchor="middle" x="777.57" y="-327.18" font-family="Arial" font-size="9.00"> Responde P1 </text>
+</g>
+<!-- Q3 -->
+<g id="node17" class="node">
+<title>Q3</title>
+<path fill="none" stroke="black" d="M769.46,-223.68C769.46,-223.68 708.54,-223.68 708.54,-223.68 702.54,-223.68 696.54,-217.68 696.54,-211.68 696.54,-211.68 696.54,-199.68 696.54,-199.68 696.54,-193.68 702.54,-187.68 708.54,-187.68 708.54,-187.68 769.46,-187.68 769.46,-187.68 775.46,-187.68 781.46,-193.68 781.46,-199.68 781.46,-199.68 781.46,-211.68 781.46,-211.68 781.46,-217.68 775.46,-223.68 769.46,-223.68"/>
+<text text-anchor="middle" x="739" y="-202.68" font-family="Arial" font-size="10.00">P3: Preferência</text>
+</g>
+<!-- Q2&#45;&gt;Q3 -->
+<g id="edge20" class="edge">
+<title>Q2-&gt;Q3</title>
+<path fill="none" stroke="black" d="M743.73,-270.34C742.98,-260.24 742.01,-247.18 741.14,-235.53"/>
+<polygon fill="black" stroke="black" points="744.63,-235.29 740.4,-225.58 737.65,-235.81 744.63,-235.29"/>
+<text text-anchor="middle" x="772.13" y="-244.38" font-family="Arial" font-size="9.00"> Responde P2 </text>
+</g>
+<!-- Q4 -->
+<g id="node18" class="node">
+<title>Q4</title>
+<path fill="none" stroke="black" d="M763.85,-140.88C763.85,-140.88 710.15,-140.88 710.15,-140.88 704.15,-140.88 698.15,-134.88 698.15,-128.88 698.15,-128.88 698.15,-116.88 698.15,-116.88 698.15,-110.88 704.15,-104.88 710.15,-104.88 710.15,-104.88 763.85,-104.88 763.85,-104.88 769.85,-104.88 775.85,-110.88 775.85,-116.88 775.85,-116.88 775.85,-128.88 775.85,-128.88 775.85,-134.88 769.85,-140.88 763.85,-140.88"/>
+<text text-anchor="middle" x="737" y="-119.88" font-family="Arial" font-size="10.00">P4: Feedback</text>
+</g>
+<!-- Q3&#45;&gt;Q4 -->
+<g id="edge21" class="edge">
+<title>Q3-&gt;Q4</title>
+<path fill="none" stroke="black" d="M738.58,-187.54C738.33,-177.44 738,-164.38 737.71,-152.73"/>
+<polygon fill="black" stroke="black" points="741.21,-152.69 737.47,-142.78 734.22,-152.87 741.21,-152.69"/>
+<text text-anchor="middle" x="767.89" y="-161.58" font-family="Arial" font-size="9.00"> Responde P3 </text>
+</g>
+<!-- Q4&#45;&gt;Fim -->
+<g id="edge27" class="edge">
+<title>Q4-&gt;Fim</title>
+<path fill="none" stroke="black" d="M733.04,-104.55C731.24,-92.96 730.57,-77.61 735.97,-65.28 739.41,-57.42 745.21,-50.4 751.48,-44.51"/>
+<polygon fill="black" stroke="black" points="753.62,-47.28 759.01,-38.16 749.11,-41.93 753.62,-47.28"/>
+<text text-anchor="middle" x="773.99" y="-78.78" font-family="Arial" font-size="9.00"> Responde P4</text>
+<text text-anchor="middle" x="773.99" y="-67.98" font-family="Arial" font-size="9.00">(Salva Respostas) </text>
+</g>
+</g>
+</svg>

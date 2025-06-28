@@ -1,0 +1,141 @@
+/* Adicione no final do seu style.css */
+
+.main-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    max-width: 1200px;
+    height: calc(100vh - 120px); /* Altura da tela menos o rodapé */
+}
+
+.log-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    flex-shrink: 0;
+    background-color: var(--chat-bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.log-list-container h2 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--text-color);
+}
+
+#log-selector {
+    width: 100%;
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--body-bg);
+    color: var(--text-color);
+}
+
+#log-selector option {
+    padding: 8px;
+    cursor: pointer;
+}
+
+#log-selector option:checked {
+    background-color: #00a884;
+    color: white;
+}
+
+.chat-container {
+    height: 100%; 
+    flex-grow: 1; 
+}
+
+.chat-summary-info {
+    padding: 10px 15px;
+    background-color: var(--body-bg);
+    border-bottom: 1px solid #ccc;
+    font-size: 0.9em;
+}
+
+.chat-summary-info p {
+    margin: 5px 0;
+}
+
+/* Adicione no final do seu style.css */
+.hidden {
+    display: none !important;
+}
+
+.view-selector {
+    margin-bottom: 15px;
+    text-align: center;
+}
+.view-selector label {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/* --- ESTILOS PARA OS BOTÕES DE SELEÇÃO DE VIEW --- */
+.view-selector {
+    display: flex;
+    gap: 10px; /* Espaço entre os botões */
+    margin-bottom: 15px;
+    justify-content: center;
+}
+
+.view-button {
+    padding: 8px 18px;
+    border: 1px solid #ccc;
+    background-color: var(--chat-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 20px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+}
+
+.dark-theme .view-button {
+    border-color: #555;
+}
+
+.view-button:hover {
+    background-color: #f0f0f0;
+}
+
+.dark-theme .view-button:hover {
+    background-color: #404040;
+}
+
+/* Estilo do botão ativo */
+.view-button.active {
+    background-color: #00a884;
+    color: white;
+    border-color: #00a884;
+}
+
+/* Adicione no final do seu style.css */
+
+.dark-theme .chat-summary-info {
+    color: #FFFFFF; /* Define a cor do texto como branco puro no tema escuro */
+    border-bottom-color: #444; /* Opcional: Suaviza a cor da borda para combinar */
+}
+
+.search-container {
+    margin-bottom: 15px;
+}
+
+#search-box {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+.dark-theme #search-box {
+    background-color: #404040;
+    border-color: #555;
+    color: var(--text-color);
+}
