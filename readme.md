@@ -129,7 +129,7 @@ Scripts para análise dos dados coletados durante o experimento.
 ### **3. Configuração do Front-End**
 1.  No arquivo `Front-end/js/script.js`, atualize a variável `BACKEND_URL` com o seu link do Ngrok:
     ```js
-    const BACKEND_URL = '[https://SUA-URL-DO-NGROK.ngrok.app/chat](https://SUA-URL-DO-NGROK.ngrok.app/chat)';
+    const BACKEND_URL = 'https://SUA-URL-DO-NGROK.ngrok.app/chat';
     ```
 2.  Abra o arquivo `Front-end/index.html` em seu navegador.
 
