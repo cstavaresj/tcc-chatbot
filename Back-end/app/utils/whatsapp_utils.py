@@ -10,7 +10,7 @@ import pyodbc
 from datetime import datetime, date
 
 # Configuração do Gemini
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"D:\Python\PROJETOS\CHATBOT\python-whatsapp-bot-main\app\utils\testchatbot-423102-c3bd2f5f33e7.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"credenciais_google.json"
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=GOOGLE_API_KEY)
 
@@ -87,8 +87,7 @@ def start_gemini_chat(session_id):
         active_model_name = get_active_model_name()
         
         model = genai.GenerativeModel(active_model_name)
-        
-        # 3. Agora a variável 'model' existe e pode ser usada na linha seguinte
+
         chat = model.start_chat(history=[])
         
         gemini_chats[session_id] = chat
@@ -105,7 +104,6 @@ def send_message_to_gemini(session_id, message):
         if session_id not in gemini_chats:
             start_gemini_chat(session_id)
 
-        # ADICIONADO: Incrementa o contador em +1 a cada requisição enviada
         model_request_count += 1
         logging.info(f"Contagem de requisições do Gemini: {model_request_count}")
 
@@ -165,14 +163,12 @@ def fluxo_inteligente(session_id, first_message):
 def iniciar_fluxo_aleatorio(session_id, first_message):
     fluxo = random.choice([fluxo_tradicional, fluxo_inteligente])
     tipo_atendimento[session_id] = "tradicional" if fluxo == fluxo_tradicional else "inteligente"
-    # LINHA ALTERADA: repassa a mensagem para a função de fluxo escolhida
     return fluxo(session_id, first_message)
 
 def iniciar_questionario(session_id):
     """Inicia o questionário de avaliação com botões de estrela."""
     chats[session_id] = ChatSession("questionario_1")
-    
-    # Cria o objeto de resposta com o texto e os botões de estrela
+        
     response_data = {
         "reply": "Obrigado por aceitar responder ao nosso questionário! 😊\n\n*Pergunta 1:* Em uma escala de 1 a 5, como você avalia sua satisfação nessa conversa?",
         "buttons": [
@@ -184,9 +180,6 @@ def iniciar_questionario(session_id):
         ]
     }
     return response_data
-
-
-# SUBSTITUA SUA FUNÇÃO process_web_message INTEIRA PELA VERSÃO ABAIXO
 
 def process_web_message(session_id, message_body):
 
@@ -214,8 +207,7 @@ def process_web_message(session_id, message_body):
         tipo_chatbot = tipo_atendimento.get(session_id, "Desconhecido")
         salvar_historico_conversa(session_id, historico_conversas[session_id], tipo_chatbot)
         return response_data
-
-    # --- INÍCIO DA MÁQUINA DE ESTADOS (CADEIA IF/ELIF ÚNICA E CORRETA) ---
+    
     current_status = chats.get(session_id, ChatSession(None)).status
 
     if current_status is None:
@@ -225,7 +217,6 @@ def process_web_message(session_id, message_body):
         return iniciar_fluxo_aleatorio(session_id, message_body)
 
     elif current_status == "tradicional":
-        # A inicialização do customer_data permanece aqui
         if session_id not in customer_data:
             customer_data[session_id] = {"pedido": [], "nome": None, "valor_total": 0.0}
 
@@ -311,7 +302,7 @@ def process_web_message(session_id, message_body):
                 total_item = ultimo_item["preco"] * quantidade
                 customer_data[session_id]["valor_total"] += total_item
                 customer_data[session_id]["pedido"][-1]["quantidade"] = quantidade
-                # ALTERADO: Agora é um objeto para ter botões
+                
                 response = {
                     "reply": f"Adicionado {quantidade}x {ultimo_item['item']} ao pedido.\nDeseja adicionar mais itens?",
                     "buttons": [{"label": "Sim", "value": "sim"}, {"label": "Não", "value": "nao"}]
@@ -334,13 +325,12 @@ def process_web_message(session_id, message_body):
             response = "Qual o seu nome? Só para deixar registrado aqui no sistema."
             chats[session_id] = ChatSession("capturar_nome")
         else:
-            # ALTERADO: Agora é um objeto para ter botões
+
             response = {
                 "reply": "Desculpa, não entendi. Deseja adicionar mais itens?",
                 "buttons": [{"label": "Sim", "value": "sim"}, {"label": "Não", "value": "nao"}]
             }
         
-        # LINHA ADICIONADA (com ajuste para objeto ou texto):
         response_text = response['reply'] if isinstance(response, dict) else response
         historico_conversas[session_id].append(formatar_historico("Bot", response_text))
         return response
@@ -423,7 +413,6 @@ def process_web_message(session_id, message_body):
                 chats[session_id] = ChatSession("alterar_quantidade_valor")
                 response = f"Qual a nova quantidade para *{item_nome}*?"
                 
-                # --- CORREÇÃO ADICIONADA AQUI ---
                 historico_conversas[session_id].append(formatar_historico("Bot", response))
                 return response
             else:
@@ -465,8 +454,6 @@ def process_web_message(session_id, message_body):
     elif current_status == "avaliacao":
         # Caminho para iniciar o questionário
         if message_body in ["sim", "s", "quero", "claro", "pode", "pode ser"]:
-            # A função iniciar_questionario já retorna o dicionário correto.
-            # Apenas retornamos o resultado dela diretamente.
             return iniciar_questionario(session_id)
         
         # Caminho para NÃO responder o questionário
@@ -484,8 +471,7 @@ def process_web_message(session_id, message_body):
                     {"label": "Sim, quero responder", "value": "sim"},
                     {"label": "Não, obrigado(a)", "value": "nao"}
                 ]
-            }
-            # Não é necessário salvar esta pergunta de correção no histórico, apenas retornamos.
+            }            
             return response_data
 
     elif current_status.startswith("questionario"):
@@ -534,11 +520,9 @@ def process_web_message(session_id, message_body):
     return "Desculpe, não entendi o que você quis dizer."
 
 def salvar_historico_conversa(session_id, historico, tipo_chatbot):
-    try:
-        # Define o caminho para a raiz do projeto subindo dois níveis
+    try:        
         project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-        
-        # Caminho para a pasta de conversas
+                
         log_conversations_dir = os.path.join(project_root, 'logs', 'conversations')
         os.makedirs(log_conversations_dir, exist_ok=True)
         
@@ -549,8 +533,7 @@ def salvar_historico_conversa(session_id, historico, tipo_chatbot):
             arquivo.write(f"Tipo de Atendimento: {tipo_chatbot}\n\n")
             arquivo.write("\n".join(historico))
         logging.info(f"Histórico da conversa salvo em: {caminho_arquivo_conversa}")
-
-        # Caminho para a pasta principal de logs para o arquivo de índice
+        
         log_main_dir = os.path.join(project_root, 'logs')
         log_list_path = os.path.join(log_main_dir, "log-list.json")
 
@@ -569,8 +552,7 @@ def salvar_historico_conversa(session_id, historico, tipo_chatbot):
         logging.error(f"Erro ao salvar histórico ou atualizar índice: {e}")
         
 def salvar_respostas_questionario(session_id):
-    try:
-        # --- Parte 1: Salvar o .txt do questionário (lógica existente) ---
+    try:        
         project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
         diretorio_logs = os.path.join(project_root, "logs", "questionarios")
         os.makedirs(diretorio_logs, exist_ok=True)
@@ -594,18 +576,16 @@ def salvar_respostas_questionario(session_id):
                 arquivo.write(f"{pergunta}\nResposta: {resposta}\n\n")
 
         logging.info(f"Respostas do questionário salvas em: {caminho_arquivo}")
-
-        # --- Parte 2: Atualizar o arquivo de índice questionario-list.json (LÓGICA ADICIONADA) ---
+        
         log_main_dir = os.path.join(project_root, 'logs')
         log_list_path = os.path.join(log_main_dir, "questionario-list.json")
 
         log_list = []
-        # Tenta ler o arquivo de índice existente
+
         if os.path.exists(log_list_path):
             with open(log_list_path, "r", encoding="utf-8") as f:
                 log_list = json.load(f)
         
-        # Adiciona o novo nome de arquivo no início da lista
         log_list.insert(0, nome_arquivo)
 
         # Salva a lista atualizada de volta no arquivo JSON
@@ -613,8 +593,7 @@ def salvar_respostas_questionario(session_id):
             json.dump(log_list, f, indent=2, ensure_ascii=False)
         
         logging.info("Arquivo de índice 'questionario-list.json' atualizado.")
-
-        # --- Parte 3: Limpar dados da sessão (lógica existente) ---
+        
         if session_id in respostas_questionario: del respostas_questionario[session_id]
         if session_id in tipo_atendimento: del tipo_atendimento[session_id]
         if session_id in historico_conversas: del historico_conversas[session_id]

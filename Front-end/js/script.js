@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const chatContainer = document.getElementById('chat-container');
     if (!chatContainer) { return; }
 
-    const BACKEND_URL = 'https://healthy-happily-spaniel.ngrok-free.app/chat';
+    const BACKEND_URL = 'https://SEU-DOMINIO-DO-NGROK.app/chat';
     const chatMessages = document.getElementById('chat-messages');
     const messageInput = document.getElementById('message-input');
     const sendButton = document.getElementById('send-button');
@@ -93,8 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const data = await response.json();
             if (data && data.reply) {
-                setTimeout(() => {
-                    // Agora passamos os botões para a função addMessage
+                setTimeout(() => {                    
                     addMessage(data.reply, 'received', data.buttons || []);
                 }, 1500);
             }
@@ -138,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
-    // --- EVENT LISTENERS ---
     sendButton.addEventListener('click', () => handleSendMessage());
     messageInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleSendMessage(); });
     settingsBtn.addEventListener('click', (e) => {
@@ -165,7 +163,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('storage', (event) => { if (event.key === 'chatHistory') { location.reload(); } });
-
-    // --- INICIA A APLICAÇÃO ---
+    
     initializeChat();
 });

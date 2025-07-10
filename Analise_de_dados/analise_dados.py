@@ -8,12 +8,11 @@ def parse_log_file(filepath, questionarios_set):
     """
     Analisa um único arquivo de log de conversa e extrai todas as métricas.
     """
-    # --- CORREÇÃO 1: Extrair o ID correto da conversa ---
     base_filename = os.path.basename(filepath)
     conversa_id = base_filename.split('_')[0]
 
     data = {
-        "Código da conversa": conversa_id, # <-- ID CORRIGIDO AQUI
+        "Código da conversa": conversa_id,
         "Tipo de chat": None,
         "Hora inicial": None,
         "Hora final": None,
@@ -59,15 +58,15 @@ def parse_log_file(filepath, questionarios_set):
                 
                 bot_message = line.split("] Bot:")[1].strip()
                 if "Não temos um item com esse número" in bot_message or \
-                   "Por favor, informe apenas a quantidade em números" in bot_message or \
-                   "Desculpa, não entendi" in bot_message or \
-                   "Número inválido" in bot_message:
+                    "Por favor, informe apenas a quantidade em números" in bot_message or \
+                    "Desculpa, não entendi" in bot_message or \
+                    "Número inválido" in bot_message:
                     data["Contagem de Erros do Bot"] += 1
                 
                 if "não entendi o que você quis dizer" in bot_message.lower() or \
-                   "não tenho como saber" in bot_message.lower() or \
-                   "não tenho como te dar essa resposta" in bot_message.lower():
-                     data["Contagem de Erros do Bot"] += 1
+                    "não tenho como saber" in bot_message.lower() or \
+                    "não tenho como te dar essa resposta" in bot_message.lower():
+                    data["Contagem de Erros do Bot"] += 1
 
                 if "atendimento está encerrado" in bot_message.lower():
                     falha_detectada = True
@@ -84,21 +83,19 @@ def parse_log_file(filepath, questionarios_set):
     else:
         data["Resultado Inferido"] = "Sucesso"
         
-    # --- CORREÇÃO 2: Nova lógica para encontrar o arquivo de questionário ---
     found_questionario_file = None
     for q_filename in questionarios_set:
-        # Verifica se o ID da conversa (ex: 'b2n8m3q') está contido no nome do arquivo do questionário
+        
         if conversa_id in q_filename:
             found_questionario_file = q_filename
-            break # Para a busca assim que encontrar o primeiro correspondente
+            break 
 
     if found_questionario_file:
         data["Respondeu o questionario?"] = "Sim"
         questionario_path = os.path.join(os.path.dirname(filepath).replace('conversations', 'questionarios'), found_questionario_file)
         if os.path.exists(questionario_path):
             parse_questionnaire_file(questionario_path, data)
-    # --- FIM DA CORREÇÃO ---
-
+    
     return data
 
 def parse_questionnaire_file(filepath, data):
@@ -116,14 +113,11 @@ def parse_questionnaire_file(filepath, data):
             p2_block = content.split("Pergunta 2:")[1].split("Pergunta 3:")[0]
             data["Pergunta 2"] = p2_block.split("Resposta:")[1].strip()
         except IndexError: pass
-            
-        # --- INÍCIO DA CORREÇÃO ---
-        try:
-            # Ajustado para usar o delimitador correto "Pergunta 4 (Feedback):"
+                    
+        try:            
             p3_block = content.split("Pergunta 3:")[1].split("Pergunta 4 (Feedback):")[0]
             data["Pergunta 3"] = p3_block.split("Resposta:")[1].strip()
-        except IndexError: pass
-        # --- FIM DA CORREÇÃO ---
+        except IndexError: pass        
             
         try:
             p4_block = content.split("Pergunta 4 (Feedback):")[1]

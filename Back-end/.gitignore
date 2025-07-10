@@ -160,14 +160,14 @@ cython_debug/
 #.idea/
 
 # Credenciais e segredos
-/app/utils/*.json
+/app/utils/testchatbot-423102-c3bd2f5f33e7.json
 /.env
 ./Front-end/.env
 
 /logs
 
 Back-end/logs/
-Back-end/app/utils/*.json
+Back-end/app/utils/testchatbot-423102-c3bd2f5f33e7.json
 
 *.swp
 *.swo

@@ -90,8 +90,7 @@ def generate_text_summary(df):
     report_lines.append(create_summary_df(df_trad['Pergunta 2'].dropna()))
     report_lines.append("\n[Chatbot Inteligente]")
     report_lines.append(create_summary_df(df_intel['Pergunta 2'].dropna()))
-    
-    # --- INÍCIO DA CORREÇÃO NA ANÁLISE DA PERGUNTA 3 ---
+        
     report_lines.append("\n\n--- Pergunta 3: Preferência (Chatbot vs. Atendimento Humano) ---")
     
     # Análise para o Bot Tradicional
@@ -112,8 +111,7 @@ def generate_text_summary(df):
         report_lines.append(f"Taxa de aceitação do bot Tradicional (vs. humano): {aceitacao_trad:.2f}%")
         report_lines.append(f"Taxa de aceitação do bot Inteligente (vs. humano): {aceitacao_intel:.2f}%")
     except Exception as e:
-        report_lines.append(f"Não foi possível calcular a aceitação relativa: {e}")
-    # --- FIM DA CORREÇÃO ---
+        report_lines.append(f"Não foi possível calcular a aceitação relativa: {e}")    
 
     report_lines.append("\n\n" + separator)
     

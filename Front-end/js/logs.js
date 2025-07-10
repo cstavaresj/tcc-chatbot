@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let allLogs = []; // Array único para guardar todos os logs carregados
     let currentView = 'conversas';
 
-    // --- FUNÇÕES DE RENDERIZAÇÃO E PARSING ---
+    // --- FUNÇÕES DE RENDERIZAÇÃO ---
 
     function formatTextToHTML(text) {
         if (typeof text !== 'string') return '';
@@ -43,8 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         chatMessages.appendChild(messageDiv);
     }
-    
-    // ATUALIZADO: Esta função agora retorna os dados analisados em vez de desenhar na tela
+        
     function parseLogContent(logContent, logType) {
         const lines = logContent.split('\n');
         const summary = { tipoAtendimento: 'Não informado', tempoInteracao: 'N/D' };
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const diffSeconds = Math.round((endTime - startTime) / 1000);
                 summary.tempoInteracao = `${Math.floor(diffSeconds / 60)} min e ${diffSeconds % 60} seg`;
             }
-        } else { // 'questionarios'
+        } else { 
             let ultimaPergunta = '';
             const tipoRegex = /^Tipo de Atendimento:\s(.*)/;
             const perguntaRegex = /^(Pergunta \d.*)/;

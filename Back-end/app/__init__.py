@@ -12,8 +12,8 @@ def create_app():
     load_configurations(app)
     configure_logging()
     
-    CORS(app, resources={r"/chat": {"origins": "https://chat.tavaresj.com.br"}})
-    #CORS(app)
+    #CORS(app, resources={r"/chat": {"origins": "https://DOMINIO-FRONT-END"}})
+    CORS(app)
     
     from .views import webhook_blueprint 
     app.register_blueprint(webhook_blueprint)
